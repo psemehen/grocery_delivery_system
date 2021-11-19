@@ -5,7 +5,7 @@ class JsonWebToken
     end
 
     def decode(token)
-      body = JWT.decode(token.split(' ').last, Rails.application.credentials.config[:secret_key_base])[0]
+      body = JWT.decode(token.split(' ').last, Rails.application.credentials.config[:secret_key_base])[0] # rubocop:disable Style/RedundantArgument
       HashWithIndifferentAccess.new body
     rescue StandardError
       nil

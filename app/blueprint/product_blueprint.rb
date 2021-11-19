@@ -15,7 +15,7 @@ class ProductBlueprint < Blueprinter::Base
   end
 
   view :incl_orders do
-    association :orders, blueprint: OrderBlueprint
+    association :orders, view: :incl_user, blueprint: OrderBlueprint
   end
 
   view :extended do

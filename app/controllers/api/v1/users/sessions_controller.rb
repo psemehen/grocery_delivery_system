@@ -1,6 +1,7 @@
 class Api::V1::Users::SessionsController < Api::V1::ApiController
   skip_before_action :authenticate_user, only: :create
 
+  # Access token should be stored on FE side
   def create
     result = Api::V1::Users::Authenticate.call(email: params[:email], password: params[:password])
 

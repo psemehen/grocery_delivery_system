@@ -60,4 +60,5 @@ group :development do
   # gem "spring"
   gem 'better_errors'
   gem 'letter_opener'
+  gem 'pry-byebug'
 end

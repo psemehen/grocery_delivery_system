@@ -39,6 +39,8 @@ Style/HashTransformValues:
   Enabled: false
 Style/SymbolProc:
   Enabled: true
+  Exclude:
+    - 'app/blueprint/*'
 Metrics/MethodLength:
   Enabled: false
 Metrics/AbcSize:

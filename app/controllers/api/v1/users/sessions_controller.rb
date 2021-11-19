@@ -13,6 +13,7 @@ class Api::V1::Users::SessionsController < Api::V1::ApiController
   end
 
   # Access token should be deleted from storage on FE side
+  # Refresh flow should also be implemented. In this case on login we have to set refresh jwt token into cookie and delete it from cookie on logout
   def destroy
     head :no_content
   end

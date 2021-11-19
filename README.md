@@ -1,24 +1,31 @@
-# README
+# Welcome to Grocery delivery platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies
 
-Things you may want to cover:
+* API-only, Rails 7, Postgres
+* Rubocop for code style. Run `rubocop` before pushing to repository to avoid offenses.
 
-* Ruby version
+## Installation
 
-* System dependencies
+Assuming you're running on a mac or some flavor of Linux:
+* Install postgres if you don't have it
+* Start postgres if it isn't running
+* Install ruby v`3.0.0` if you don't already have it
+* Use your ruby environment manager of choice (.rvm, .rb_env, etc) to create and then run a 'grocery_delivery_system' ruby environment under ruby-3.0.0
+* run `bundle` to install necessary gems
+* Create the database files (`rails db:create`)
+* [Setup Credentials](##setup-credentials)
+* Run any pending database migrations (`rails db:migrate`)
+* Seed database (`rails db:seed`)
+* Start rails server (`rails s`)
+* Test the app is running OK by going to http://localhost:3000/
 
-* Configuration
+## Setup Credentials
 
-* Database creation
+To setup credentials we use `multi environments`. It provides utility to easily create and use environment specific credentials. Each of these have their own encryption keys: `development.key` is for `development.yml.enc`, `test.key` is for `test.yml.enc`, `production.key` is for `production.yml.enc`. `Development.key & production.key & test.key` are in .gitignore so ask to provide them to be able to use environment credentials. Put these files into `config/credentials`.
+For creating or editing environment credentials use this command: `EDITOR=nano|vim rails credentials:edit --environment production|development|test`
 
-* Database initialization
+## TODO list
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Refreshing tokens for auth
+* Specs with RSpec

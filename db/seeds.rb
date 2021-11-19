@@ -1,3 +1,4 @@
+# In a perfect world initial data could be created using factories OR by importing some dump which is close to prod
 Grocery.create!(name: 'Beer, Wine & Spirits')
 puts 'Groceries'
 
